@@ -1,0 +1,13 @@
+{% if template contains 'article' %}
+    {% assign likebtn_object_type = 'article' %}
+    {% assign likebtn_object = article %}
+    {% assign likebtn_identifier = 'article_' | append: article.id %}
+{% else %}
+    {% assign likebtn_object_type = 'product' %}
+    {% assign likebtn_object = product %}
+    {% assign likebtn_identifier = 'product_' | append: product.id %}
+{% endif %}
+<!-- LikeBtn.com BEGIN -->
+<span class="likebtn-wrapper" data-theme="custom" data-icon_l="hrt1" data-icon_d="hrt11" data-icon_l_c_v="#fb05b9" data-i18n_like="Love" data-ef_voting="push" data-white_label="true" data-identifier="{{ likebtn_identifier }}" data-dislike_enabled="false" data-icon_dislike_show="false" data-counter_clickable="true" data-counter_frmt="km" data-counter_count="true" data-share_size="small" data-addthis_service_codes="facebook,twitter,compact,preferred_1,preferred_2,preferred_3,preferred_4,preferred_5" data-item_url="{{ shop.url }}{{ likebtn_object.url }}" data-item_title="{{ likebtn_object.title | escape | strip_html }}" data-item_description="{{ likebtn_object.description | escape | strip_html }}" data-item_image="https:{% if template contains 'article' %}{{ likebtn_object.image | img_url: 'medium' }}{% else %}{{ likebtn_object.featured_image | product_img_url: 'large' | replace: '?', '%3F' | replace: '&','%26' }}{% endif %}" data-item_date="{{ likebtn_object.created_at | datetime: '%FT%T%:z' }}" data-tooltip_enabled="false" data-site_id="5a397c52fa8fdfc60cff2462" data-engine="shopify"></span>
+<script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
+<!-- LikeBtn.com END -->

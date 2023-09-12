@@ -1,0 +1,99 @@
+{% assign tops 		= product.metafields.AcquaACF.tops | split: "|"  %}
+{% assign bottoms 	= product.metafields.AcquaACF.bottoms | split: "|"  %}
+
+{% if tops.size > 0 %}
+{% assign tb_product_type = 'top'  %}
+<div class="tops-and-bottoms-wrap dots-container">
+	<div class="swiper-container acqua-tb-products">
+      <h4 style="text-align: center; padding: 10px 0px 5px 0px""> CHOOSE YOUR TOP </h4>
+      	<div class="swiper-wrapper">
+			{% for tb_product in tops %}
+				<div class="swiper-slide">
+					{% include 'product-shop-item' %}
+				</div>
+          	{% endfor %}
+		</div>
+  	</div>
+
+
+    <!-- For browse different style -->
+    <div class="swiper-bubble swiper-button-prev fr-mb-sw-prev"></div>
+    <div class="swiper-bubble swiper-button-next fr-mb-sw-next"></div>
+  
+   
+
+
+  
+</div>
+{% endif %}
+
+{% if bottoms.size > 0 %}
+{% assign tb_product_type = 'bottom'  %}
+<div class="tops-and-bottoms-wrap dots-container">
+	<div class="swiper-container acqua-tb-products">
+       <h4 style="text-align: center; padding: 10px 0px 5px 0px"> CHOOSE YOUR BOTTOM </h4>
+      	<div class="swiper-wrapper">
+			{% for tb_product in bottoms %}
+				<div class="swiper-slide">
+					{% include 'product-shop-item' %}
+				</div>
+          	{% endfor %}
+		</div>
+  	</div>
+	
+  
+  <!-- For browse different style -->
+   <div class="swiper-bubble swiper-button-prev fr-mb-sw-prev"></div>
+	<div class="swiper-bubble swiper-button-next fr-mb-sw-next"></div>
+  
+   
+  
+</div>
+{% endif %}
+<div class="add-to-cart-with-wishlist">
+
+
+   <!-- Swym button on product pages -->
+        <div class="swym-wishlist-button-bar"></div>
+  <!-- Swym button on product pages -->
+  
+<div class="global-add-to-cart">
+  <button type="button" class="default-cart-button__button disabled" disabled="disabled">
+    <span>
+      ADD TO CART (<span class="acqua_tb_quantity">0</span>/2)
+    </span>
+  </button>
+</div>
+
+
+</div>
+
+
+<style>
+
+  .add-to-cart-with-wishlist{
+    display: flex;
+    align-items: flex-end;
+    justify content-flex-end;
+  }
+
+.global-add-to-cart{
+  width: 80% !important;
+}
+.swym-wishlist-button-bar{
+  width: 20% !important;
+  z-index: 999;
+  
+}
+  .swym-fave-count{
+  display: none;
+}
+</style>
+
+
+
+
+
+
+
+
